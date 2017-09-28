@@ -1,0 +1,16 @@
+{
+  "name": "simple-cjs-closure-compiler",
+  "version": "0.0.1",
+  "description": "Simple example of using Google Closure Compiler to consume and compile CJS modules",
+  "main": "src/index.js",
+  "scripts": {
+    "build-simple": "java -jar closure-compiler.jar --js ./src/**.js --js package.json --js ./node_modules/**.js --js_output_file ./out/compiled.js --module_resolution NODE --entry_point ./src/index --process_common_js_modules --dependency_mode STRICT --compilation_level SIMPLE --rewrite_polyfills false",
+    "build-advanced": "java -jar closure-compiler.jar --js ./src/**.js --js package.json --js ./node_modules/**.js --js_output_file ./out/compiled.js --module_resolution NODE --entry_point ./src/index --process_common_js_modules --dependency_mode STRICT --compilation_level ADVANCED --rewrite_polyfills false",
+    "exec": "node ./out/compiled"
+  },
+  "author": "Yury Solovyov",
+  "license": "MIT",
+  "dependencies": {
+    "camelcase": "4.1.0"
+  }
+}
